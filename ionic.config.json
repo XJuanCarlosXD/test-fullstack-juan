@@ -1,0 +1,7 @@
+{
+  "name": "test-fullstack-juan",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
