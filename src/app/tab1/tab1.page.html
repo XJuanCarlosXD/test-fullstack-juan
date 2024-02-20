@@ -1,17 +1,40 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="container">
+    <ion-label class="title"> ¿Qué quieres hacer hoy? </ion-label>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <ion-toolbar color="primary" class="toolbar"
+      >Cotizar una poliza</ion-toolbar
+    >
+
+    <ion-label class="title-h4"> Aseguradoras mas populares </ion-label>
+
+    <div class="content-images">
+      <div class="item-image" *ngFor="let item of itemsAse">
+        <img [src]="basePath + item.image" [alt]="item.image" />
+      </div>
+    </div>
+
+    <a href="#" class="more"
+      ><span>Ver mas aseguradoras</span>
+      <ion-icon name="chevron-forward-outline" class="ion-color-primary" />
+    </a>
+
+    <div class="content-car">
+      <img src="{{basePath}}car_image.jpg" alt="Imagen_car" />
+      <ion-label
+        >Renueva tu poliza <br />
+        hoy con hasta un <br />
+        <span>20% OFF</span></ion-label
+      >
+    </div>
+
+    <div class="btn-content">
+      <ion-button color="primary" shape="round" size="small"
+        >Inicia seccion aqui</ion-button
+      >
+      <ion-button color="primary" shape="round" size="small"
+        >Registrate aqui</ion-button
+      >
+    </div>
+  </div>
 </ion-content>
