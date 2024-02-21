@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Data } from '../model/data';
 
@@ -20,17 +20,11 @@ export class DataService {
   }
 
   createData(data: Partial<Data>): Observable<Data> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-    });
-    return this.http.post<Data>(this.apiUrl, data, { headers });
+    return this.http.post<Data>(this.apiUrl, data);
   }
 
   updateData(id: number, newData: Partial<Data>): Observable<Data> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-    });
-    return this.http.put<Data>(`${this.apiUrl}/${id}`, newData, { headers });
+    return this.http.put<Data>(`${this.apiUrl}/${id}`, newData);
   }
 
   deleteData(id: number): Observable<void> {
