@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" [routerLink]="['../']">
+      <ion-button color="secondary">
+        <ion-icon name="chevron-back-outline"></ion-icon> atras
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button
+        color="secondary"
+        [disabled]="myForm.invalid"
+        (click)="submitForm()"
+      >
+        Guardar <ion-icon name="save-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="myForm" (ngSubmit)="submitForm()">
+    <ion-toolbar color="primary">
+      <ion-label> CRUD Aseguradora </ion-label>
+    </ion-toolbar>
+    <ion-list>
+      <ion-label> Seleciona logo aseguradora </ion-label>
+      <ion-item>
+        <ion-radio-group
+          (ionChange)="radioGroupChange($event)"
+          formControlName="image"
+          value="image"
+          class="content-img"
+        >
+          <ion-item *ngFor="let item of itemsAse">
+            <ion-label>
+              <img [src]="basePath + item.image" [alt]="item.image"
+            /></ion-label>
+            <ion-radio [value]="item.image"> </ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Titulo</ion-label>
+        <ion-input formControlName="title" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Subtitulo</ion-label>
+        <ion-input formControlName="subtitle" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descripcion</ion-label>
+        <ion-textarea
+          formControlName="descrip"
+          placeholder="Escribe una descripcion "
+        ></ion-textarea>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

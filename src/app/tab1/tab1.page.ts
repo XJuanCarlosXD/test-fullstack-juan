@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss'],
 })
 export class Tab1Page {
-  basePath: string = 'assets/images/';
-  itemsAse: { image: string; link: string }[] = [];
+  public basePath: string = 'assets/images/';
+  public itemsAse: { image: string; link: string }[] = [];
 
   constructor() {
     this.itemsAse = [

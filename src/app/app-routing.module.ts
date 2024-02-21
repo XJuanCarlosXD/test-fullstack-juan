@@ -7,6 +7,20 @@ const routes: Routes = [
     loadChildren: () =>
       import('./tabs/tabs.module').then((m) => m.TabsPageModule),
   },
+  {
+    path: 'form-aseguradora',
+    loadChildren: () =>
+      import('./form-aseguradora/form-aseguradora.module').then(
+        (m) => m.FormAseguradoraPageModule
+      ),
+  },
+  {
+    path: 'fomr/edit/:id',
+    loadChildren: () =>
+      import('./form-aseguradora/form-aseguradora.module').then(
+        (m) => m.FormAseguradoraPageModule
+      ),
+  },
 ];
 @NgModule({
   imports: [

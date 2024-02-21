@@ -1,9 +1,26 @@
+<ion-fab slot="fixed" vertical="bottom" horizontal="end">
+  <ion-fab-button routerLink="/form-aseguradora">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="container">
+    <ion-card *ngFor="let item of itemsAse" class="item-card">
+      <img [src]="basePath + item.image" [alt]="item.image" />
+      <ion-card-header>
+        <ion-card-title>{{item.title}}</ion-card-title>
+        <ion-card-subtitle>{{item.subtitle}}</ion-card-subtitle>
+      </ion-card-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+      <ion-card-content> {{item.descrip}} </ion-card-content>
+      <ion-item>
+        <ion-button color="danger" (click)="presentAlert(item.id)"
+          ><ion-icon name="close-circle-outline"></ion-icon
+        ></ion-button>
+        <ion-button color="secondary" routerLink="/fomr/edit/{{item.id}}"
+          ><ion-icon name="pencil-outline"></ion-icon
+        ></ion-button>
+      </ion-item>
+    </ion-card>
+  </div>
 </ion-content>

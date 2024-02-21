@@ -68,7 +68,8 @@
   img {
     border-radius: 12px;
     width: 100vw;
-    height: 5.5rem;
+    max-height: calc(100vh - 85vh);
+    overflow: hidden;
     opacity: 0.6;
   }
   ion-label {

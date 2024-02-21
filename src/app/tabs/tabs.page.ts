@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['tabs.page.scss'],
 })
 export class TabsPage {
-  menuItems: { text: string; link: string; icon: string; tab: string }[] = [];
+  public menuItems: {
+    text: string;
+    link: string;
+    icon: string;
+    tab: string;
+  }[] = [];
 
   constructor() {
     this.menuItems = [

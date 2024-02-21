@@ -21,26 +21,29 @@
 }
 
 .message {
-  max-width: calc(100vw - 28vw);
+  width: 100%;
+  max-width: calc(100vw - 26vw);
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 10px;
+  color: #ffff;
 }
 
 .user-message {
-  background-color: var(--ion-color-step-500);
+  background-color: var(--ion-color-medium-shade);
   float: left;
   clear: both;
-  margin-right: 20%;
-  border-end-start-radius: 0px;
+  margin-left: 20%;
+
+  border-end-end-radius: 0px;
 }
 
 .bot-message {
   background-color: var(--ion-color-primary);
   float: right;
   clear: both;
-  margin-left: 20%;
-  border-end-end-radius: 0px;
+  margin-right: 20%;
+  border-end-start-radius: 0px;
 }
 
 .message p {
